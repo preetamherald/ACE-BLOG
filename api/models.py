@@ -71,7 +71,11 @@ class Posts(models.Model):
 
 
 class UserDetail(models.Model):
-    user = models.OneToOneField(AUTH_USER_MODEL, related_name='user_detail', on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        AUTH_USER_MODEL,
+        related_name='user_detail',
+        on_delete=models.CASCADE)
+
     image                = models.ImageField(
         upload_to      = 'photos',
         storage        = STORAGE,
@@ -79,7 +83,10 @@ class UserDetail(models.Model):
         blank          = True,
         max_length     = None
         )
-    created = models.DateTimeField(auto_now_add=True)
+
+    bio                   = models.TextField(blank=True, null=True)
+    Designation           = models.CharField(max_length=200,blank=True)
+    created               = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return smart_text(self.user)
