@@ -2,7 +2,7 @@ Brotli==1.0.6
 certifi==2018.10.15
 chardet==3.0.4
 dj-database-url==0.5.0
-Django==2.1.1
+Django==3.2.22
 -e git+http://github.com/preetamherald/django-imgur#egg=django_imgur
 django-tastypie==0.14.2
 gunicorn==19.9.0
